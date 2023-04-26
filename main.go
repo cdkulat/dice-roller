@@ -13,8 +13,8 @@ import (
 
 func main() {
 	// Initialize Discord bot
-
-	discord, err := discordgo.New(os.Getenv("BOT_TOKEN"))
+	token := "Bot " + os.Getenv("BOT_TOKEN") // grab token from environment - must reset each time shell is closed
+	discord, err := discordgo.New(token)     // create new
 	if err != nil {
 		fmt.Println("Error creating Discord session: ", err)
 		return
